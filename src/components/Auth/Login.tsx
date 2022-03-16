@@ -30,10 +30,15 @@ export function LoginForm() {
 		schema: LoginSchema,
 	})
 
+	function handleGuestLogin() {
+		form.setValue('email', 'root_user2@gmail.com')
+		form.setValue('password', 'root_user')
+	}
+
 	async function handleSubmit(values: z.infer<typeof LoginSchema>) {
 		const body = {
-			email: isGuestLogin ? 'root_user2@gmail.com' : values.email,
-			password: isGuestLogin ? 'root_user' : values.password,
+			email: values.email,
+			password: values.password,
 		}
 
 		try {
@@ -82,7 +87,7 @@ export function LoginForm() {
 				/>
 
 				<FormSubmitButton size="lg">Login</FormSubmitButton>
-				<Button onClick={() => setIsGuestLogin(true)} size="lg" variant="white">
+				<Button onClick={() => handleGuestLogin()} size="lg" variant="white">
 					Login as Guest
 				</Button>
 			</Form>

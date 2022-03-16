@@ -3,7 +3,7 @@ import { Button } from '../ui/Button'
 
 export function HeroSection() {
 	return (
-		<div className="relative bg-white overflow-hidden">
+		<div className="relative bg-white overflow-hidden min-h-screen">
 			<div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
 				<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
 					<div className="sm:max-w-lg">
